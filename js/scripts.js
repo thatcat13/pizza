@@ -6,6 +6,11 @@ function Pizza(size, toppings) {
   this.sizeCalc();
 }
 
+function Toppings(meat, veggie) {
+  this.meat = meat;
+  this.veggie = veggie;
+}
+
 function sum(price, toppings) {
     return price + toppings;
 };
@@ -35,12 +40,30 @@ $(document).ready(function(){
 
     var size = $("select#size").val();
 
-    var yourToppings = $("input:checkbox[name=toppings]:checked").map(function() {
+  // $("#toppings").each(function() {
+    var inputtedMeat = $("input:checkbox[name=meat]:checked").map(function() {
       return parseInt($(this).val());
     }).get();
+      console.log(inputtedMeat);
+  // });
+    // var inputtedVeggie = $("input:checkbox[name=veggie]:checked").map(function() {
+    //   return parseInt($(this).val());
+    // }
 
-    var newPizza = new Pizza(size, yourToppings);
-    console.log(newPizza);
+
+    // var newToppings = new Toppings(inputtedStreet, inputtedCity, inputtedState);
+    // newContact.addresses.push(newAddress);
+
+
+
+
+
+    // var yourToppings = $("input:checkbox[name=toppings]:checked").map(function() {
+    //   return parseInt($(this).val());
+    // }).get();
+    //
+    // var newPizza = new Pizza(size);
+    // console.log(newPizza);
 
     // newPizza.toppings.push(yourToppings.reduce(sum, 0));
     // console.log(newPizza);
