@@ -40,11 +40,28 @@ $(document).ready(function(){
 
     var size = $("select#size").val();
 
-  // $("#toppings").each(function() {
+    var newPizza = new Pizza(size, toppings);
+
     var inputtedMeat = $("input:checkbox[name=meat]:checked").map(function() {
       return parseInt($(this).val());
     }).get();
       console.log(inputtedMeat);
+    var inputtedVeggie = $("input:checkbox[name=veggie]:checked").map(function() {
+      return parseInt($(this).val());
+    }).get();
+      console.log(inputtedVeggie);
+    var newToppings = new Toppings(inputtedMeat, inputtedVeggie)
+      console.log(newToppings);
+    newPizza.toppings.push(newToppings);
+    console.log(newPizza);
+
+
+    // newToppings.push = new Toppings(inputtedVeggie)
+    //   console.log(newToppings);
+    // var newPizza = new Pizza(size, toppings);
+
+
+
   // });
     // var inputtedVeggie = $("input:checkbox[name=veggie]:checked").map(function() {
     //   return parseInt($(this).val());
