@@ -1,7 +1,7 @@
 //business logic
 function Pizza(size, toppings) {
   this.size = size;
-  this.toppings = toppings;
+  this.toppings = [];
   this.price;//placeholder
   this.sizeCalc();
 }
@@ -10,7 +10,7 @@ function sum(price, toppings) {
     return price + toppings;
 };
 
-Pizza.prototype.sizeCalc = function() {
+Pizza.prototype.sizeCalc = function(size) {
   if (this.size === "Small") {
     this.price === 8;
   } else if (this.size === "Medium") {
@@ -20,8 +20,7 @@ Pizza.prototype.sizeCalc = function() {
   }
 };
 
-
-
+pizza = new Pizza();
 
 //frontend logic:
 $(document).ready(function(){
@@ -29,7 +28,6 @@ $(document).ready(function(){
     event.preventDefault();
 
     var inputtedSize = $("select#size").val();
-
     var newPizza = new Pizza(inputtedSize);
     console.log(newPizza);
 
@@ -38,8 +36,8 @@ $(document).ready(function(){
     }).get();
       // yourToppings.reduce(sum, 0);
 
-    var pizzaWithTop = new Pizza(yourToppings.reduce(sum, 0));
-    console.log(pizzaWithTop);
+    newPizza.toppings.push(yourToppings.reduce(sum, 0));
+    console.log(newPizza);
 
   }); //event toppings
   //
