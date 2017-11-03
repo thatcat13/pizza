@@ -22,7 +22,6 @@ Pizza.prototype.priceCalc = function() {
 
 
 //frontend logic:
-
 $(document).ready(function(){
   $("form#sizeSelect").submit(function(event) {
     event.preventDefault();
@@ -30,7 +29,7 @@ $(document).ready(function(){
     var size = $("select#sizes").val();
 
   }); //event size
-    alert("this works");
+
 
   $("input:checkbox[name=toppings]:checked").each(function() {
     var yourToppings = $(this).val();

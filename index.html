@@ -16,59 +16,56 @@
         <p class="lead h4">When life calls for pizza, you've come to the right place.</p>
       </div>
       <div class="row">
-        <div class="container">
-          <div class="card col-md-6">
-            <p class="card-text h4">Choose Your Size of Pizza:</p>
-            <form id="sizeSelect">
-              <select  id="sizes" class="custom select form-control">
-                <option>Small</option>
-                <option>Medium</option>
-                <option>Large</option>
-              </select>
-            </form>
-          </div><!--size form-->
+        <div class="card col-md-6">
+          <p class="card-text h4">Choose Your Size of Pizza:</p>
+          <form id="sizeSelect">
+            <select id="sizes" class="custom select form-control">
+              <option selected>Sizes</option>
+              <option value="Small">Small</option>
+              <option value="Medium">Medium</option>
+              <option value="Large">Large</option>
+            </select>
+          </form>
+        </div><!--size form-->
 
-          <form>
-            <div class="card col-md-6">
-              <p class="card-text h4">Choose Your Toppings:</p>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input id="extra-cheese" name="toppings" class="form-check-input" type="checkbox" value="extra-cheese">
-                  Extra Cheese
-                </label>
-                <label class="form-check-label">
-                  <input id="pepperoni" name="toppings" class="form-check-input" type="checkbox" value="pepperoni">
-                  Pepperoni
-                </label>
-                <label class="form-check-label">
-                  <input id="anchovies" name="toppings" class="form-check-input" type="checkbox" value="anchovies">
-                  Anchovies
-                </label>
-                <label class="form-check-label">
-                  <input id="bacon" name="toppings" class="form-check-input" type="checkbox" value="bacon">
-                  Candied Bacon
-                </label>
-                <label class="form-check-label">
-                  <input id="peppers" name="toppings" class="form-check-input" type="checkbox" value="peppers">
-                  Bell Peppers
-                </label>
-                <label class="form-check-label">
-                  <input id="basil" name="toppings" class="form-check-input" type="checkbox" value="basil">
-                  Fresh Basil
-                </label>
-                <label class="form-check-label">
-                  <input id="mushrooms" name="toppings" class="form-check-input" type="checkbox" value="mushrooms">
-                  Mushrooms
-                </label>
-              </div>
-            </form>
-          </div><!--toppings form-->
-        </div><!--container for both forms-->
+
+        <div class="card col-md-6">
+          <p class="card-text h4">Choose Your Toppings:</p>
+          <form id="toppings">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input id="extra-cheese" name="toppings" class="form-check-input" type="checkbox" value="extra-cheese">Extra Cheese
+              </label>
+              <label class="form-check-label">
+                <input id="pepperoni" name="toppings" class="form-check-input" type="checkbox" value="pepperoni">
+                Pepperoni
+              </label>
+              <label class="form-check-label">
+                <input id="anchovies" name="toppings" class="form-check-input" type="checkbox" value="anchovies">
+                Anchovies
+              </label>
+              <label class="form-check-label">
+                <input id="bacon" name="toppings" class="form-check-input" type="checkbox" value="bacon">
+                Candied Bacon
+              </label>
+              <label class="form-check-label">
+                <input id="peppers" name="toppings" class="form-check-input" type="checkbox" value="peppers">
+                Bell Peppers
+              </label>
+              <label class="form-check-label">
+                <input id="basil" name="toppings" class="form-check-input" type="checkbox" value="basil">
+                Fresh Basil
+              </label>
+              <label class="form-check-label">
+                <input id="mushrooms" name="toppings" class="form-check-input" type="checkbox" value="mushrooms">
+                Mushrooms
+              </label>
+            </div>
+          </form>
+        </div><!--toppings form card-->
       </div><!--row-->
 
       <div class="row">
-
-      </div><!--cost row-->
         <div class="card col-md">
           <p class="card-text h4">Your Total:</p>
           <br>
@@ -77,6 +74,7 @@
             <br>
           </div>
         </div>
+      </div><!--cost row-->
     </div><!--main container-->
   </body>
 </html>
