@@ -1,54 +1,49 @@
 //business logic
-function Pizza(toppings, size) {
+function Pizza(size, toppings) {
   this.size = size;
   this.toppings = toppings;
-  this.price = 8;
+  this.price;//placeholder
   this.sizeCalc();
 }
 
-Pizza.prototype.sizeCalc = function() {
-  if (this.size === "Small") {
-    this.price = 8;
-  } else if (this.size === "Medium") {
-    this.price += 3;
-  } else if (this.size === "Large") {
-    this.price += 6;
-  }
-
-  return Pizza.price;
+function sum(price, toppings) {
+    return price + toppings;
 };
 
-function sum(total, number) {
-    return total + number;
-}
+Pizza.prototype.sizeCalc = function() {
+  if (this.size === "Small") {
+    this.price === 8;
+  } else if (this.size === "Medium") {
+    this.price === 11;
+  } else if (this.size === "Large") {
+    this.price === 14;
+  }
+};
+
+
+
 
 //frontend logic:
 $(document).ready(function(){
-//   $("form#pizzaSize").submit(function(event) {
-//     event.preventDefault();
-//
-//     // var size = $("select#sizes").val();
-//
-//     // var newPizza = new Pizza(Pizza.sizeCalc());
-//   }); //event size
-
-  $("form#toppings").submit(function(event) {
+  $("form#yourPizza").submit(function(event) {
     event.preventDefault();
-      // var toppings = [0];
+
+    var inputtedSize = $("select#size").val();
+
+    var newPizza = new Pizza(inputtedSize);
+    console.log(newPizza);
+
     var yourToppings = $("input:checkbox[name=toppings]:checked").map(function() {
       return parseInt($(this).val());
     }).get();
       // yourToppings.reduce(sum, 0);
 
-      var pizzaWithTop = new Pizza(yourToppings.reduce(sum, 0));
-      console.log(pizzaWithTop);
+    var pizzaWithTop = new Pizza(yourToppings.reduce(sum, 0));
+    console.log(pizzaWithTop);
 
-
-      // toppings.reduce(sum, 0);
-      // console.log(toppings);
   }); //event toppings
-
-    // $("#total-cost").text("Your total cost is: " + newPizza());
+  //
+  //   $("#total-cost").text("Your total cost is: " + newPizza());
 
 
 }); //ready
