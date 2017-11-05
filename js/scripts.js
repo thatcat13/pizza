@@ -3,55 +3,69 @@ function Pizza(size, toppings) {
   this.size = size;
   this.toppings = [];
   this.price;//placeholder
-  this.sizeCalc();
+  // this.sizeCalc();
 }
 
-function Toppings(meat, veggie) {
-  this.meat = meat;
-  this.veggie = veggie;
+function Toppings(toppings) {
+  this.toppings = toppings;
 }
 
-function sum(price, toppings) {
-    return price + toppings;
+function sum(a, b) {
+    return a + b;
 };
 
-Pizza.prototype.sizeCalc = function() {
-  if (this.size === "Small") {
-    this.price === 8;
-  } else if (this.size === "Medium") {
-    this.price === 11;
-  } else if (this.size === "Large") {
-    this.price === 14;
-  }
-};
+// Pizza.prototype.sizeCalc = function() {
+//   if (this.size === "Small") {
+//     this.price === 8;
+//   } else if (this.size === "Medium") {
+//     this.price === 11;
+//   } else if (this.size === "Large") {
+//     this.price === 14;
+//   }
+// };
+
+// Pizza.prototype.total = function(toppings) {
+//   var price = 0;
+//   var total = 0;
+//
+//   for (var i = 0; i < this.toppings.length; i++) {
+//     this.price += toppings[i].this.toppings;
+//   }
+//
+//   total = this.price;
+//
+//   return total;
+//
+// };
 
 Pizza.prototype.grandTotal = function() {
-  return this.price;
+  return this.size + this.toppings;
 }
 
-Pizza.prototype.outputMessage = function() {
-  return "Your total is: " + Pizza.grandTotal;
-}
+// Pizza.prototype.outputMessage = function() {
+//   return "Your total is: " + Pizza.grandTotal;
+// }
 
 //frontend logic:
 $(document).ready(function(){
   $("form#yourPizza").submit(function(event) {
     event.preventDefault();
 
-    var size = $("select#size").val();
+    var size = parseInt($("select#size").val());
 
-    var inputtedMeat = $("input:checkbox[name=meat]:checked").map(function() {
+    var inputtedToppings = $("input:checkbox[name=topping]:checked").map(function() {
       return parseInt($(this).val());
     }).get();
-    var inputtedVeggie = $("input:checkbox[name=veggie]:checked").map(function() {
-      return parseInt($(this).val());
-    }).get();
-    var newToppings = new Toppings(inputtedMeat, inputtedVeggie);
 
+    var newToppings = new Toppings(inputtedToppings.reduce(sum, 0));
+    // console.log(inputtedToppings.reduce(sum, 0));
     var newPizza = new Pizza(size, toppings);
     newPizza.toppings.push(newToppings);
     console.log(newPizza);
 
+
+        //
+        // $("span#rollTotal").text(currentRoll.reduce(add, 0))
 
 
     // newToppings.push = new Toppings(inputtedVeggie)
