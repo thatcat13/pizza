@@ -32,11 +32,13 @@ $(document).ready(function(){
       return parseInt($(this).val());
     }).get();
 
+
+
     var newToppings = new Toppings(inputtedToppings.reduce(sum, 0));
     var newPizza = new Pizza(size, toppings);
     newPizza.toppings.push(newToppings);
-
-    $("#total-cost").text("Your total cost is: " + (newToppings.toppingsTotal() + newPizza.sizeTotal()) + " dollars");
+    console.log(newPizza);
+    $("#total-cost").text("$" + (newToppings.toppingsTotal() + newPizza.sizeTotal()));
 
   }); //event yourPizza
 }); //ready

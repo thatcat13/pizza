@@ -12,13 +12,13 @@
     <div class="container">
       <div class="jumbotron">
         <img class="img-card-top" src="img/" alt="">
-        <h1 class="display-3">Sabor de Soledad Pizza</h1>
-        <p class="lead h4">When life calls for pizza, you've come to the right place.</p>
+        <h1 id="sabor" class="display-3">Sabor de Soledad Pizza</h1>
+        <p class="h4">When life calls for pizza, you've come to the right place.</p>
       </div>
       <div class="form-group">
         <div class="row">
           <div class="card col-md-6">
-            <p class="card-text h4">Choose Your Size of Pizza:</p>
+            <p class="card-text h3">Choose Your Size of Pizza:</p>
             <form id="yourPizza">
               <select id="size" class="custom-select form-control">
                 <option selected>Sizes</option>
@@ -29,7 +29,7 @@
             </div><!--size form-->
 
             <div class="card col-md-6">
-              <p class="card-text h4">Choose Your Toppings:</p>
+              <p class="card-text h3">Choose Your Toppings:</p>
                 <div id="toppings" class="form-check">
                   <label class="form-check-label">
                     <input id="extra-cheese" name="topping" class="form-check-input" type="checkbox" value="1">Extra Cheese
@@ -59,17 +59,17 @@
                     Mushrooms
                   </label>
                 </div>
-                <button id="totalButton" type="submit">Calculate Total</button>
+                <button id="totalButton" class="btn btn-dark" type="submit">Calculate Total</button>
               </form>
           </div><!--toppings form card-->
         </div><!--row-->
       </div><!--form group-->
       <div class="row">
-        <div class="card col-md">
-          <p class="card-text h4">Your Total:</p>
+        <div class="card col-md-4 mx-auto">
+          <p id="total" class="card-text h3">Your Total:</p>
           <br>
           <div>
-            <p id="total-cost"></p>
+            <h3 id="total-cost"></h3>
             <br>
           </div>
         </div>

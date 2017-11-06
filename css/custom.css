@@ -1,0 +1,29 @@
+body {
+  background-image: url(wood.jpg);
+}
+
+.jumbotron {
+  background-color: rgba(153, 102, 51, 0.75);
+}
+
+.card {
+  background-color: rgba(242, 230, 217, 0.75);
+  border: none;
+}
+
+button {
+  margin: 4px;
+}
+
+#yourPizza {
+  margin-top: 5px;
+}
+
+.card-text {
+  margin-top: 20px;
+}
+
+
+#total, #total-cost {
+  text-align: center;
+}
