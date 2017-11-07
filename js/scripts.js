@@ -11,14 +11,15 @@ function sum(a, b) {
 
 Pizza.prototype.sizeTotal = function() {
   if (this.size === "Medium") {
-    return this.size + 3;
+    return this.price + 3;
   } else if (this.size === "Large") {
-    return this.size + 6;
+    return this.price + 6;
   }
-} return this.size;
+  return this.price;
+};
 
 Pizza.prototype.toppingsTotal = function() {
-  return this.allToppings;
+  return this.toppings;
 }
 
 
@@ -26,18 +27,22 @@ Pizza.prototype.toppingsTotal = function() {
 $(document).ready(function(){
   $("form#yourPizza").submit(function(event) {
     event.preventDefault();
+    var yourPizza;
 
     var inputtedSize = $("select#size").val();
     var inputtedToppings = $("input:checkbox[name=topping]:checked").map(function() {
       return parseInt($(this).val());
     }).get();
 
-    newPizza.toppings.push(newToppings);
-    var newToppings = new Toppings(inputtedToppings);
-    var newPizza = new Pizza(inputtedSize, (inputtedToppings.reduce(sum, 0)), price);
+    yourPizza = new Pizza(inputtedSize, inputtedToppings);
+    var sizedPizza = yourPizza.sizeTotal();
+    console.log(sizedPizza);
+    yourPizza.toppings.push(inputtedToppings.reduce(sum, 0));
+    console.log(yourPizza);
 
-    console.log(newPizza);
-    $("#total-cost").text("$" + (newToppings.toppingsTotal() + newPizza.sizeTotal()));
+
+
+    $("#total-cost").text("$" + sizedPizza + yourPizza.toppingsTotal());
 
   }); //event yourPizza
 }); //ready
