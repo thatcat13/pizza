@@ -1,11 +1,8 @@
 //business logic
-function Pizza(size, toppings) {
+function Pizza(size, toppings, price) {
   this.size = size;
   this.toppings = [];
-}
-
-function Toppings(allToppings) {
-  this.allToppings = allToppings;
+  this.price = 8;
 }
 
 function sum(a, b) {
@@ -13,10 +10,14 @@ function sum(a, b) {
 };
 
 Pizza.prototype.sizeTotal = function() {
-  return this.size;
-}
+  if (this.size === "Medium") {
+    return this.size + 3;
+  } else if (this.size === "Large") {
+    return this.size + 6;
+  }
+} return this.size;
 
-Toppings.prototype.toppingsTotal = function() {
+Pizza.prototype.toppingsTotal = function() {
   return this.allToppings;
 }
 
@@ -26,17 +27,15 @@ $(document).ready(function(){
   $("form#yourPizza").submit(function(event) {
     event.preventDefault();
 
-    var size = parseInt($("select#size").val());
-
+    var inputtedSize = $("select#size").val();
     var inputtedToppings = $("input:checkbox[name=topping]:checked").map(function() {
       return parseInt($(this).val());
     }).get();
 
-
-
-    var newToppings = new Toppings(inputtedToppings.reduce(sum, 0));
-    var newPizza = new Pizza(size, toppings);
     newPizza.toppings.push(newToppings);
+    var newToppings = new Toppings(inputtedToppings);
+    var newPizza = new Pizza(inputtedSize, (inputtedToppings.reduce(sum, 0)), price);
+
     console.log(newPizza);
     $("#total-cost").text("$" + (newToppings.toppingsTotal() + newPizza.sizeTotal()));
 
