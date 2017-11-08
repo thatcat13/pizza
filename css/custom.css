@@ -12,10 +12,12 @@ body {
 
 #choose-size {
   text-align: center;
+  margin-bottom: 10px;
 }
 
 #toppings {
   text-align: center;
+  background-color: rgba(242, 230, 217, 0.75);
 }
 
 #pizza {
