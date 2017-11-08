@@ -10,6 +10,13 @@ body {
   text-align: center;
 }
 
+#choose-size {
+  text-align: center;
+}
+
+#toppings {
+  text-align: center;
+}
 
 #pizza {
   align-items: center;
