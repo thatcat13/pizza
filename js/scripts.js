@@ -36,7 +36,7 @@ $(document).ready(function(){
     yourPizza = new Pizza(inputtedSize, inputtedToppings);
     yourPizza.toppings.push(inputtedToppings.reduce(sum, 0));
 
-    $("#total-cost").text("$" + (yourPizza.toppingsTotal()) + (yourPizza.sizeTotal()));
+    $("#total-cost").text("$" + (yourPizza.toppingsTotal() + yourPizza.sizeTotal()));
 
-  }); //event yourPizza
-}); //ready
+  }); //yourPizza form
+}); //document ready

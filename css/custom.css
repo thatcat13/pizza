@@ -1,9 +1,18 @@
 body {
   background-image: url(wood.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 100px;
 }
 
 .jumbotron {
   background-color: rgba(153, 102, 51, 0.75);
+  text-align: center;
+}
+
+
+#pizza {
+  align-items: center;
 }
 
 .card {

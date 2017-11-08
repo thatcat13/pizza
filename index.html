@@ -10,18 +10,20 @@
   </head>
   <body>
     <div class="container">
-      <div class="jumbotron">
-        <img class="img-card-top" src="img/" alt="">
-        <h1 id="sabor" class="display-3">Sabor de Soledad Pizza</h1>
-        <p class="h4">When life calls for pizza, you've come to the right place.</p>
+      <div class="row">
+        <div class="jumbotron col-md">
+          <img id="pizza" class="img-card-top" src="css/pizza.jpg" alt="">
+          <h1 id="sabor" class="display-3">Sabor de Soledad Pizza</h1>
+          <p class="h4">Pizza cures sadness.</p>
+        </div>
       </div>
+
       <div class="form-group">
         <div class="row">
-          <div class="card col-md-6">
-            <p class="card-text h3">Choose Your Size of Pizza:</p>
+          <div id="choose-size" class="card col-md-6">
+            <p class="card-text h4">Choose Your Size of Pizza:</p>
             <form id="yourPizza">
               <select id="size" class="custom-select form-control">
-                <option selected>Sizes</option>
                 <option value="Small">Small</option>
                 <option value="Medium">Medium</option>
                 <option value="Large">Large</option>
@@ -29,7 +31,7 @@
             </div><!--size form-->
 
             <div class="card col-md-6">
-              <p class="card-text h3">Choose Your Toppings:</p>
+              <p class="card-text h4">Choose Your Toppings:</p>
                 <div id="toppings" class="form-check">
                   <label class="form-check-label">
                     <input id="extra-cheese" name="topping" class="form-check-input" type="checkbox" value="1">Extra Cheese
