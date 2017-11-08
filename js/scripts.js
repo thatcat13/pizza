@@ -1,5 +1,5 @@
 //business logic
-function Pizza(size, toppings, price) {
+function Pizza(size, toppings) {
   this.size = size;
   this.toppings = [];
   this.price = 8;
@@ -20,7 +20,7 @@ Pizza.prototype.sizeTotal = function() {
 
 Pizza.prototype.toppingsTotal = function() {
   return this.toppings;
-}
+};
 
 
 //frontend logic:
