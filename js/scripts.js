@@ -18,19 +18,8 @@ Pizza.prototype.sizeTotal = function() {
   return this.price;
 };
 
-// Pizza.prototype.toppingsTotal = function() {
-//   return this.toppings[0];
-// };
-
-Pizza.prototype.finalCost = function() {
-  return ((this.toppings[0]) + );
-};
-
-
-var examplePizza = {
-  size:"Small",
-  toppings: 1,
-  price: 9
+Pizza.prototype.toppingsTotal = function() {
+  return this.toppings[0];
 };
 
 
@@ -47,7 +36,7 @@ $(document).ready(function(){
     yourPizza = new Pizza(inputtedSize, inputtedToppings);
     yourPizza.toppings.push(inputtedToppings.reduce(sum, 0));
 
-    $("#total-cost").text("$" + yourPizza.finalCost());
+    $("#total-cost").text("$" + (yourPizza.toppingsTotal()) + (yourPizza.sizeTotal()));
 
   }); //event yourPizza
 }); //ready
